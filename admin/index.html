@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VINHOLI | Acesso Administrativo</title>
+<link rel="stylesheet" href="./css/admin.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./js/config.js"></script>
+</head>
+<body class="admin-body login-body">
+<main class="login-shell"><section class="login-card">
+<div class="admin-brand"><span class="vh-mark">VH</span><span>VINHOLI</span></div>
+<div class="login-heading"><span class="eyebrow">ÁREA RESTRITA</span><h1>Painel administrativo</h1><p>Gerencie seus imóveis e fotos pelo computador ou celular.</p></div>
+<form id="loginForm" class="admin-form">
+<label>E-mail<input type="email" id="email" required autocomplete="email" placeholder="seu@email.com"></label>
+<label>Senha<div class="password-field"><input type="password" id="password" required autocomplete="current-password" placeholder="Digite sua senha"><button type="button" class="password-toggle" data-target="password">Mostrar</button></div></label>
+<div class="form-row between"><label class="check-label"><input type="checkbox" id="remember"><span>Lembrar acesso</span></label><a href="#" class="muted-link" id="forgotPassword">Esqueci minha senha</a></div>
+<button class="admin-btn gold full" type="submit">Entrar no painel</button><p class="form-message" id="loginMessage"></p>
+</form>
+<a class="back-site" href="../index.html">Voltar para o site</a>
+<div class="login-credit">
+  Criado e desenvolvido por
+  <a href="https://www.jaguarsoft.com.br/" target="_blank" rel="noopener noreferrer">JaguarSoft</a>
+</div>
+</section></main>
+<script src="./js/admin.js"></script>
+</body></html>

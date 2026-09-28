@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VINHOLI | Página não encontrada</title>
+<meta name="description" content="A página que você procura não foi encontrada. Volte para a VINHOLI e encontre seu próximo endereço.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .error-page{min-height:100svh;display:grid;place-items:center;padding:120px 0 80px;position:relative;overflow:hidden;background:var(--ink)}
+  .error-page::before{content:"404";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font:500 clamp(15rem,38vw,34rem)/.8 var(--serif);color:rgba(198,161,91,.045);pointer-events:none;white-space:nowrap}
+  .error-box{position:relative;text-align:center;width:min(760px,100%);margin:auto}
+  .error-code{font:500 clamp(5rem,14vw,9rem)/.8 var(--serif);color:var(--gold);letter-spacing:-.04em;margin-bottom:28px}
+  .error-box h1{font-size:clamp(2.2rem,5vw,4rem);margin-bottom:18px}
+  .error-box p{color:var(--muted);font-size:1rem;max-width:48ch;margin:0 auto 34px}
+  .error-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+  .error-actions .btn{min-width:180px}
+  .error-back{border:0;background:transparent;color:var(--muted);cursor:pointer;padding:10px 14px;transition:color .3s}
+  .error-back:hover{color:var(--gold-soft)}
+  @media(max-width:620px){.error-page{padding:110px 20px 70px}.error-box h1{font-size:2.25rem}.error-actions .btn{width:100%}.error-back{width:100%}}
+</style>
+</head>
+<body>
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <div class="brand-area">
+      <a href="/index.html#inicio" class="brand" aria-label="VINHOLI - início"><b>VH</b><span>VINHOLI</span></a>
+      <div class="language-switcher" aria-label="Idioma">
+        <button type="button" class="language-btn active" data-lang="pt-BR" aria-label="Português (Brasil)" aria-pressed="true">
+          <svg viewBox="0 0 28 18" aria-hidden="true"><rect width="28" height="18" rx="2" fill="#009b3a"/><path d="M14 2.2 25.1 9 14 15.8 2.9 9 14 2.2Z" fill="#ffdf00"/><circle cx="14" cy="9" r="4.1" fill="#002776"/><path d="M10.4 8.1c2.5-.7 5.1-.3 7.2 1" fill="none" stroke="#fff" stroke-width=".8"/></svg>
+        </button>
+        <button type="button" class="language-btn" data-lang="en-US" aria-label="English (United States)" aria-pressed="false">
+          <svg viewBox="0 0 28 18" aria-hidden="true"><rect width="28" height="18" rx="2" fill="#fff"/><path d="M0 0h28v2H0zm0 4h28v2H0zm0 4h28v2H0zm0 4h28v2H0zm0 4h28v2H0z" fill="#b22234"/><rect width="12" height="10" rx="1" fill="#3c3b6e"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="/index.html#inicio">Início</a>
+      <a href="/index.html#imoveis">Imóveis</a>
+      <a href="/index.html#imoveis" data-deal="venda">Comprar</a>
+      <a href="/index.html#imoveis" data-deal="aluguel">Alugar</a>
+      <a href="/index.html#sobre">Sobre</a>
+      <a href="/index.html#contato">Contato</a>
+      <a href="/admin/" class="btn-admin">Área Administrativa</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<main class="error-page">
+  <section class="error-box" aria-labelledby="error-title">
+    <div class="error-code" aria-hidden="true">404</div>
+    <h1 id="error-title">Página não encontrada.</h1>
+    <p>O endereço que você acessou não está disponível ou foi movido. Volte para a VINHOLI e continue encontrando o imóvel ideal.</p>
+    <div class="error-actions">
+      <a href="/index.html" class="btn btn-gold">Voltar ao início</a>
+      <button type="button" class="error-back" onclick="history.back()">Voltar para a página anterior</button>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contato">
+  <div class="wrap foot-grid">
+    <div>
+      <a href="/index.html#inicio" class="brand"><b>VH</b><span>VINHOLI</span></a>
+      <p class="foot-tag">Negócios que constroem conquistas.</p>
+    </div>
+    <div><h3>Navegação</h3>
+      <a href="/admin/" class="btn-admin">Área Administrativa</a>
+      <a href="/index.html#inicio">Início</a><a href="/index.html#imoveis">Imóveis</a><a href="/index.html#sobre">Sobre</a><a href="/index.html#contato">Contato</a></div>
+    <div><h3>Contato</h3>
+      <a href="https://wa.me/5511961396115" target="_blank" rel="noopener">WhatsApp: +55 11 96139-6115</a>
+      <a href="mailto:claudio00fava@gmail.com">claudio00fava@gmail.com</a>
+      <a href="mailto:claudio00fava@gmail.com">E-mail: claudio00fava@gmail.com</a></div>
+    <div><h3>Redes sociais</h3>
+      <a href="https://www.instagram.com/vinholi_multimarcas?stkn=MXhnYjNrOXp2N3dtag%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram VINHOLI">Instagram</a></div>
+  </div>
+  <div class="wrap copy">
+    <div>© <span id="year">2026</span> VINHOLI. Todos os direitos reservados.</div>
+    <div class="developer">Desenvolvido por <a href="https://www.jaguarsoft.com.br/" target="_blank" rel="noopener" aria-label="JaguarSoft - desenvolvimento de sites e sistemas">JaguarSoft</a></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511961396115" class="wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8L4 20z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8c-1-.5-1.8-1.300-2.300-2.300l.8-1-1-2L9 9z"/></svg>
+</a>
+
+<script>
+(function(){
+  const header=document.getElementById('header');
+  const burger=document.getElementById('burger');
+  const nav=document.getElementById('nav');
+  function syncHeader(){header.classList.toggle('stuck',window.scrollY>12)}
+  syncHeader(); window.addEventListener('scroll',syncHeader,{passive:true});
+  burger.addEventListener('click',function(){const open=burger.getAttribute('aria-expanded')==='true';burger.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open);});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.setAttribute('aria-expanded','false');nav.classList.remove('open')}));
+  document.querySelectorAll('.language-btn').forEach(btn=>btn.addEventListener('click',function(){
+    document.querySelectorAll('.language-btn').forEach(b=>{const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+    document.documentElement.lang=btn.dataset.lang;
+  }));
+})();
+</script>
+</body>
+</html>

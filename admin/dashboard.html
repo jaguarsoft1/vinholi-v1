@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VINHOLI | Dashboard</title><link rel="stylesheet" href="./css/admin.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./js/config.js"></script>
+</head>
+<body class="admin-body"><div class="admin-layout">
+<aside class="sidebar" id="sidebar"><div class="sidebar-brand"><span class="vh-mark">VH</span><div><strong>VINHOLI</strong><small>ADMINISTRATIVO</small></div></div>
+<nav class="sidebar-nav"><a class="active" href="./dashboard.html"><span>01</span> Dashboard</a><a href="./novo-imovel.html"><span>02</span> Novo anúncio</a></nav>
+<div class="sidebar-bottom"><a href="../index.html" target="_blank">Ver site</a><button id="logoutBtn">Sair</button></div></aside>
+<div class="admin-main"><header class="admin-topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div><span class="eyebrow">PAINEL</span><h1>Visão geral</h1></div><a class="admin-btn gold" href="./novo-imovel.html">+ Novo anúncio</a></header>
+<main class="dashboard-content">
+<section class="stats-grid"><article class="stat-card"><span>Total de imóveis</span><strong id="totalCount">0</strong><small>cadastrados</small></article><article class="stat-card"><span>À venda</span><strong id="saleCount">0</strong><small>anúncios</small></article><article class="stat-card"><span>Para alugar</span><strong id="rentCount">0</strong><small>anúncios</small></article><article class="stat-card"><span>Em destaque</span><strong id="featuredCount">0</strong><small>na vitrine</small></article></section>
+<section class="panel" id="imoveis"><div class="panel-head"><div><span class="eyebrow">SUPABASE</span><h2>Imóveis cadastrados</h2></div><div class="table-actions"><input id="searchProperty" type="search" placeholder="Buscar imóvel..."><select id="statusFilter"><option value="">Todos</option><option value="publicado">Publicados</option><option value="rascunho">Rascunhos</option></select></div></div>
+<div class="table-wrap"><table><thead><tr><th>Imóvel</th><th>Tipo</th><th>Negócio</th><th>Valor</th><th>Status</th><th>Ações</th></tr></thead><tbody id="propertyTable"><tr><td colspan="6">Carregando...</td></tr></tbody></table></div></section>
+<p class="form-message" id="dashboardMessage"></p>
+</main></div></div><script src="./js/admin.js"></script></body></html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imóvel | VINHOLI</title>
+<meta name="description" content="Detalhes do imóvel VINHOLI.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/imovel.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+<header class="header stuck" id="header">
+  <div class="wrap header-in">
+    <a href="./index.html#inicio" class="brand" aria-label="VINHOLI - início"><b>VH</b><span>VINHOLI</span></a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="./index.html#inicio">Início</a>
+      <a href="./index.html#imoveis">Imóveis</a>
+      <a href="./index.html#imoveis" data-deal="venda">Comprar</a>
+      <a href="./index.html#imoveis" data-deal="aluguel">Alugar</a>
+      <a href="./index.html#sobre">Sobre</a>
+      <a href="./index.html#contato">Contato</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<main class="detail-page">
+  <div class="detail-wrap">
+    <a class="btn-back" href="./index.html#imoveis">← Voltar para imóveis</a>
+
+    <section id="loading" class="detail-status">
+      <h1>Carregando imóvel...</h1>
+      <p>Buscando informações e fotos.</p>
+    </section>
+
+    <section id="notFound" class="detail-status" hidden>
+      <h1>Imóvel não encontrado</h1>
+      <p>Este anúncio pode ter sido removido, desativado ou ainda não está publicado.</p>
+      <a href="./index.html#imoveis">Voltar para os imóveis</a>
+    </section>
+
+    <article id="property" hidden>
+      <div class="detail-top">
+        <div>
+          <p class="detail-kicker" id="propertyType">Imóvel</p>
+          <h1 class="detail-title" id="propertyTitle"></h1>
+          <p class="detail-location" id="propertyLocation"></p>
+        </div>
+        <div class="detail-price" id="propertyPrice"></div>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <div class="gallery-main" id="galleryMain"></div>
+        <div class="gallery-thumbs" id="galleryThumbs"></div>
+      </div>
+
+      <section class="detail-summary">
+        <div class="detail-box compact-box">
+          <h2>Cômodos</h2>
+          <div class="mini-list" id="roomsList"></div>
+        </div>
+        <div class="detail-box compact-box">
+          <h2>Características</h2>
+          <div class="tag-list" id="featuresList"></div>
+        </div>
+        <div class="detail-box compact-box">
+          <h2>Proximidades</h2>
+          <div class="tag-list" id="nearbyList"></div>
+        </div>
+      </section>
+
+      <section class="detail-description-section detail-box">
+        <h2>Descrição do imóvel</h2>
+        <p class="detail-description is-collapsed" id="propertyDescription"></p><button type="button" class="description-toggle" id="descriptionToggle" hidden>Ler mais</button>
+      </section>
+
+      <section class="location-section detail-box" id="locationSection">
+        <div class="location-head">
+          <div>
+            <h2>Localização</h2>
+            <p id="locationText" class="location-text"></p>
+          </div>
+        </div>
+        <div class="maps-action" id="mapsAction" hidden>
+          <a id="mapsLink" class="map-link" href="#" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+        <div id="propertyMap" class="property-map" hidden></div>
+        <div id="mapStatus" class="map-status" hidden></div>
+      </section>
+
+      <section class="detail-box detail-contact">
+        <div>
+          <span class="detail-kicker">Interessado?</span>
+          <h2>Fale com a VINHOLI</h2>
+          <p>Receba mais informações, condições e agende uma visita ao imóvel.</p>
+        </div>
+        <div class="detail-actions">
+          <a id="whatsappBtn" class="btn btn-gold" href="#" target="_blank" rel="noopener">Tenho interesse</a>
+          <a class="btn btn-line" href="./index.html#imoveis">Ver outros imóveis</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="footer" id="contato">
+  <div class="wrap foot-grid">
+    <div>
+      <a href="./index.html#inicio" class="brand"><b>VH</b><span>VINHOLI</span></a>
+      <p class="foot-tag">Negócios que constroem conquistas.</p>
+    </div>
+    <div><h3>Navegação</h3>
+      <a href="./admin/" class="btn-admin">Área Administrativa</a>
+      <a href="./index.html#inicio">Início</a><a href="./index.html#imoveis">Imóveis</a><a href="./index.html#sobre">Sobre</a><a href="./index.html#contato">Contato</a></div>
+    <div><h3>Contato</h3>
+      <a href="https://wa.me/5511961396115" target="_blank" rel="noopener">WhatsApp: +55 11 96139-6115</a>
+      <a href="mailto:claudio00fava@gmail.com">claudio00fava@gmail.com</a>
+      <a href="mailto:claudio00fava@gmail.com">E-mail: claudio00fava@gmail.com</a></div>
+    <div><h3>Redes sociais</h3>
+      <a href="https://www.instagram.com/vinholi_multimarcas?stkn=MXhnYjNrOXp2N3dtag%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram VINHOLI">Instagram</a></div>
+  </div>
+  <div class="wrap copy">
+    <div>© <span id="year">2026</span> VINHOLI. Todos os direitos reservados.</div>
+    <div class="developer">Desenvolvido por <a href="https://www.jaguarsoft.com.br/" target="_blank" rel="noopener" aria-label="JaguarSoft - desenvolvimento de sites e sistemas">JaguarSoft</a></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="./admin/js/config.js"></script>
+<script>
+(() => {
+  'use strict';
+
+  const $ = (s) => document.querySelector(s);
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const WHATSAPP = '5511961396115';
+
+  const loading = $('#loading');
+  const notFound = $('#notFound');
+  const property = $('#property');
+
+  const supabaseClient = (window.supabase && window.SUPABASE_URL && window.SUPABASE_ANON_KEY)
+    ? window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY)
+    : null;
+
+  function brl(value) {
+    return Number(value || 0).toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      maximumFractionDigits: 0
+    });
+  }
+
+  function valueOrDash(value, suffix = '') {
+    return value !== null && value !== undefined && value !== '' && Number(value) !== 0
+      ? `${value}${suffix}`
+      : '—';
+  }
+
+  function showNotFound() {
+    loading.hidden = true;
+    property.hidden = true;
+    notFound.hidden = false;
+  }
+
+  function mediaItem(foto) {
+    let publicUrl = foto.url || '';
+    if (foto.storage_path && window.supabase && window.SUPABASE_URL && window.SUPABASE_ANON_KEY) {
+      const { data } = supabaseClient.storage.from(window.SUPABASE_BUCKET || 'imoveis').getPublicUrl(foto.storage_path);
+      publicUrl = data?.publicUrl || publicUrl;
+    }
+    return { ...foto, url: publicUrl, isVideo: false };
+  }
+
+  function getYouTubeVideoId(value) {
+    const raw = String(value || '').trim();
+    if (!raw) return null;
+    try {
+      const url = new URL(raw);
+      const host = url.hostname.toLowerCase().replace(/^www\./, '');
+      let videoId = '';
+      if (host === 'youtu.be') videoId = url.pathname.split('/').filter(Boolean)[0] || '';
+      else if (host === 'youtube.com' || host === 'm.youtube.com') {
+        if (url.pathname === '/watch') videoId = url.searchParams.get('v') || '';
+        else if (url.pathname.startsWith('/shorts/')) videoId = url.pathname.split('/')[2] || '';
+        else if (url.pathname.startsWith('/embed/')) videoId = url.pathname.split('/')[2] || '';
+      }
+      return /^[A-Za-z0-9_-]{11}$/.test(videoId) ? videoId : null;
+    } catch { return null; }
+  }
+
+  function getYouTubeEmbedUrl(value) {
+    const id = getYouTubeVideoId(value);
+    return id ? `https://www.youtube.com/embed/${id}?rel=0` : null;
+  }
+
+  function renderGallery(fotos, titulo, videoUrl) {
+    const normalized = (fotos || [])
+      .filter(foto => foto && foto.tipo_midia !== 'video')
+      .map(mediaItem)
+      .sort((a, b) => {
+        if (a.principal !== b.principal) return a.principal ? -1 : 1;
+        return (a.ordem || 0) - (b.ordem || 0);
+      });
+
+    const youtubeId = getYouTubeVideoId(videoUrl);
+    if (youtubeId) normalized.push({ id: 'youtube-video', isYouTube: true, youtubeId, url: videoUrl, principal: false, ordem: 999999 });
+
+    const main = $('#galleryMain');
+    const thumbs = $('#galleryThumbs');
+    main.innerHTML = '';
+    thumbs.innerHTML = '';
+
+    if (!normalized.length) {
+      main.innerHTML = '<div class="gallery-empty">Nenhuma foto disponível para este imóvel.</div>';
+      return;
+    }
+
+    let currentIndex = 0;
+
+    function changeMedia(delta) {
+      currentIndex = (currentIndex + delta + normalized.length) % normalized.length;
+      showMedia(currentIndex);
+    }
+
+    function showMedia(index) {
+      currentIndex = index;
+      const item = normalized[index];
+      main.innerHTML = '';
+
+      const label = document.createElement('span');
+      label.className = 'media-label';
+      label.textContent = item.isYouTube ? 'Vídeo' : `${index + 1} / ${normalized.length}`;
+      main.appendChild(label);
+
+      if (normalized.length > 1) {
+        const prev = document.createElement('button');
+        prev.type = 'button';
+        prev.className = 'gallery-arrow gallery-arrow-prev';
+        prev.setAttribute('aria-label', 'Foto anterior');
+        prev.innerHTML = '&#10094;';
+        prev.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          changeMedia(-1);
+        });
+
+        const next = document.createElement('button');
+        next.type = 'button';
+        next.className = 'gallery-arrow gallery-arrow-next';
+        next.setAttribute('aria-label', 'Próxima foto');
+        next.innerHTML = '&#10095;';
+        next.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          changeMedia(1);
+        });
+
+        main.appendChild(prev);
+        main.appendChild(next);
+      }
+
+      if (item.isYouTube) {
+        const frame = document.createElement('div');
+        frame.className = 'gallery-video-frame';
+        frame.innerHTML = `<iframe src="https://www.youtube.com/embed/${item.youtubeId}?rel=0" title="Vídeo do imóvel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+        main.appendChild(frame);
+      } else {
+        const img = document.createElement('img');
+        img.src = item.url;
+        img.alt = `${titulo} - imagem ${index + 1}`;
+        img.loading = index === 0 ? 'eager' : 'lazy';
+        main.appendChild(img);
+      }
+
+      [...thumbs.children].forEach((el, i) => el.classList.toggle('active', i === index));
+    }
+
+    normalized.forEach((item, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'gallery-thumb' + (item.isYouTube ? ' gallery-thumb-video' : '');
+      button.setAttribute('aria-label', item.isYouTube ? 'Abrir vídeo do imóvel' : `Abrir foto ${index + 1}`);
+
+      if (item.isYouTube) {
+        const img = document.createElement('img');
+        img.src = `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`;
+        img.alt = 'Miniatura do vídeo';
+        button.appendChild(img);
+        const play = document.createElement('span');
+        play.className = 'gallery-play';
+        play.textContent = 'Vídeo';
+        button.appendChild(play);
+      } else {
+        const img = document.createElement('img');
+        img.src = item.url;
+        img.alt = `${titulo} - miniatura ${index + 1}`;
+        img.loading = 'lazy';
+        button.appendChild(img);
+      }
+
+      button.addEventListener('click', () => showMedia(index));
+      thumbs.appendChild(button);
+    });
+
+    showMedia(0);
+  }
+
+  function renderList(target, values, emptyText) {
+    const el = $(target);
+    if (!el) return;
+    el.innerHTML = '';
+    const list = (values || []).filter(Boolean);
+    if (!list.length) {
+      el.innerHTML = `<span class="list-empty">${emptyText}</span>`;
+      return;
+    }
+    list.forEach(value => {
+      const item = document.createElement('span');
+      item.className = 'info-tag';
+      item.textContent = value;
+      el.appendChild(item);
+    });
+  }
+
+  function linesToList(value) {
+    return String(value || '').split(/\r?\n|;|,/).map(v => v.trim()).filter(Boolean);
+  }
+
+  function renderPropertyLists(imovel) {
+    const rooms = [];
+    if (Number(imovel.quartos) > 0) rooms.push(`${imovel.quartos} ${Number(imovel.quartos) === 1 ? 'Quarto' : 'Quartos'}`);
+    if (Number(imovel.suites) > 0) rooms.push(`${imovel.suites} ${Number(imovel.suites) === 1 ? 'Suíte' : 'Suítes'}`);
+    if (Number(imovel.banheiros) > 0) rooms.push(`${imovel.banheiros} ${Number(imovel.banheiros) === 1 ? 'Banheiro' : 'Banheiros'}`);
+    if (Number(imovel.vagas) > 0) rooms.push(`${imovel.vagas} ${Number(imovel.vagas) === 1 ? 'Vaga' : 'Vagas'}`);
+    if (Number(imovel.area_util) > 0) rooms.push(`${imovel.area_util} m² de área útil`);
+    if (Number(imovel.area_construida) > 0) rooms.push(`${imovel.area_construida} m² construídos`);
+    if (Number(imovel.area_terreno) > 0) rooms.push(`${imovel.area_terreno} m² de terreno`);
+    renderList('#roomsList', rooms, 'Informações não cadastradas.');
+
+    renderList('#featuresList', linesToList(imovel.caracteristicas), 'Nenhuma característica adicional cadastrada.');
+    renderList('#nearbyList', linesToList(imovel.proximidades), 'Nenhuma proximidade cadastrada.');
+  }
+
+  async function renderMap(imovel) {
+    const mapEl = $('#propertyMap');
+    const statusEl = $('#mapStatus');
+    const textEl = $('#locationText');
+    const mapsLink = $('#mapsLink');
+    const mapsAction = $('#mapsAction');
+    const locationSection = $('#locationSection');
+    if (!locationSection) return;
+
+    const baseLocation = [imovel.bairro, imovel.cidade, imovel.estado].filter(Boolean).join(', ');
+    const fullAddress = [
+      imovel.mostrar_endereco && imovel.rua ? `${imovel.rua}${imovel.numero ? `, ${imovel.numero}` : ''}` : '',
+      imovel.mostrar_endereco ? imovel.complemento : '',
+      imovel.bairro,
+      imovel.cidade,
+      imovel.estado,
+      imovel.cep
+    ].filter(Boolean).join(', ');
+
+    const mapsQuery = fullAddress || baseLocation;
+    textEl.textContent = mapsQuery || 'Localização não informada';
+    if (!mapsQuery) {
+      locationSection.hidden = true;
+      return;
+    }
+
+    mapsLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
+    mapsAction.hidden = false;
+    mapEl.hidden = false;
+    statusEl.hidden = true;
+
+    const showFallbackMap = () => {
+      mapEl.innerHTML = `<iframe class="map-fallback-frame" src="https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed" title="Mapa da localização do imóvel" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+      mapEl.hidden = false;
+      statusEl.hidden = true;
+    };
+
+    if (!window.L) {
+      showFallbackMap();
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=br&q=${encodeURIComponent(mapsQuery)}`, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Geocodificação HTTP ${response.status}`);
+      const results = await response.json();
+      if (!results.length) throw new Error('Localização não encontrada');
+
+      const lat = Number(results[0].lat);
+      const lon = Number(results[0].lon);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) throw new Error('Coordenadas inválidas');
+
+      mapEl.innerHTML = '';
+      const map = L.map(mapEl, { scrollWheelZoom: false, attributionControl: true }).setView([lat, lon], imovel.mostrar_endereco && imovel.rua ? 16 : 14);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors', maxZoom: 19 }).addTo(map);
+      L.marker([lat, lon]).addTo(map).bindPopup(`<strong>${imovel.titulo || 'Imóvel VINHOLI'}</strong><br>${baseLocation}`).openPopup();
+      setTimeout(() => map.invalidateSize(), 150);
+    } catch (error) {
+      console.warn('Mapa Leaflet/Nominatim indisponível:', error);
+      showFallbackMap();
+    }
+  }
+
+  async function loadProperty() {
+    if (!id || !supabaseClient) {
+      console.error('ID ou configuração do Supabase ausente.');
+      showNotFound();
+      return;
+    }
+
+    const { data: imovel, error } = await supabaseClient
+      .from(window.SUPABASE_TABLE || 'imoveis')
+      .select(`
+        id, codigo, titulo, descricao, tipo, negocio, valor, condominio, iptu,
+        cep, estado, cidade, bairro, rua, numero, complemento, mostrar_endereco,
+        quartos, suites, banheiros, vagas, area_util, area_construida, area_terreno,
+        status, destaque, video_url, caracteristicas, proximidades,
+        imovel_fotos (id, url, storage_path, ordem, principal, tipo_midia)
+      `)
+      .eq('id', id)
+      .eq('status', 'publicado')
+      .single();
+
+    if (error || !imovel) {
+      console.error('Não foi possível obter o imóvel:', error);
+      showNotFound();
+      return;
+    }
+
+    const local = [imovel.bairro, imovel.cidade, imovel.estado].filter(Boolean).join(', ');
+    const negocio = imovel.negocio === 'aluguel' ? 'Locação' : 'Venda';
+
+    document.title = `${imovel.titulo || 'Imóvel'} | VINHOLI`;
+    $('#propertyType').textContent = `${imovel.tipo || 'Imóvel'} · ${negocio}`;
+    $('#propertyTitle').textContent = imovel.titulo || 'Imóvel VINHOLI';
+    $('#propertyLocation').textContent = local || 'Localização não informada';
+    $('#propertyPrice').innerHTML = `${brl(imovel.valor)}${imovel.negocio === 'aluguel' ? ' <small>/ mês</small>' : ''}`;
+    const description = $('#propertyDescription');
+    const descriptionToggle = $('#descriptionToggle');
+    description.textContent = imovel.descricao || 'Entre em contato com a VINHOLI para receber mais informações sobre este imóvel.';
+    description.classList.add('is-collapsed');
+    descriptionToggle.hidden = description.textContent.length < 360;
+    descriptionToggle.textContent = 'Ler mais';
+
+
+    const mensagem = `Olá, VINHOLI. Tenho interesse no imóvel "${imovel.titulo || ''}"${imovel.codigo ? ` (código ${imovel.codigo})` : ''}. Gostaria de receber mais informações.`;
+    $('#whatsappBtn').href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+
+    renderPropertyLists(imovel);
+    renderGallery(imovel.imovel_fotos, imovel.titulo || 'Imóvel VINHOLI', imovel.video_url);
+
+    loading.hidden = true;
+    notFound.hidden = true;
+    property.hidden = false;
+
+    // O imóvel já está visível neste ponto; renderizamos o mapa agora para evitar que
+    // um IntersectionObserver observe a seção enquanto o artigo ainda estava hidden.
+    renderMap(imovel).catch(error => console.warn('Falha ao renderizar mapa:', error));
+  }
+
+  const burger = $('#burger');
+  const nav = $('#nav');
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      const open = !nav.classList.contains('open');
+      nav.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+  }
+
+  $('#descriptionToggle')?.addEventListener('click', () => {
+    const description = $('#propertyDescription');
+    const button = $('#descriptionToggle');
+    if (!description || !button) return;
+    const expanded = description.classList.toggle('is-expanded');
+    description.classList.toggle('is-collapsed', !expanded);
+    button.textContent = expanded ? 'Ler menos' : 'Ler mais';
+  });
+
+  const year = document.querySelector('#year'); if (year) year.textContent = new Date().getFullYear();
+  loadProperty();
+})();
+</script>
+</body>
+</html>
