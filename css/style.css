@@ -174,10 +174,34 @@ h2{font-size:clamp(2rem,4.4vw,3.4rem)}
 .footer h3{font:500 1.15rem var(--serif);color:var(--gold);margin-bottom:16px}
 .footer div>a:not(.brand),.footer div>span{display:block;color:var(--muted);margin-bottom:8px;font-size:.95rem;transition:color .3s,transform .3s var(--ease)}
 .footer div>a:not(.brand):hover{color:var(--gold-soft);transform:translateX(4px)}
-.copy{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
-.developer{margin-top:8px;font-size:.78rem;letter-spacing:.04em;color:var(--muted)}
-.developer a{color:var(--gold-soft);font-weight:400;transition:color .3s}
-.developer a:hover{color:var(--gold)}
+.copy {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  color: var(--muted);
+  font-size: .85rem;
+  text-align: center;
+}
+.developer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: .78rem;
+  letter-spacing: .04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.developer a {
+  color: var(--gold-soft);
+  font-weight: 400;
+  transition: color .3s;
+}
+
+.developer a:hover {
+  color: var(--gold);
+}
 .wa{position:fixed;right:20px;bottom:20px;z-index:90;width:54px;height:54px;border-radius:50%;background:var(--ink);border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;transition:background .3s,color .3s,transform .3s var(--ease)}
 .wa svg{width:26px}.wa:hover{background:var(--gold);color:var(--ink);transform:translateY(-3px)}
 
