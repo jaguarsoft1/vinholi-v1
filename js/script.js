@@ -795,35 +795,79 @@
       await fetchImoveis();
 
     const tipo =
-      d.get('tipo');
+  d.get('tipo');
 
-    const quartos =
-      Number(
-        d.get('quartos')
-      ) || 0;
+const quartos =
+  Number(
+    d.get('quartos')
+  ) || 0;
 
-    const list =
-      all.filter(p =>
-        p.negocio ===
-          state.negocio &&
+const banheiros =
+  Number(
+    d.get('banheiros')
+  ) || 0;
 
-        (!tipo ||
-          p.tipo === tipo) &&
+const vagas =
+  Number(
+    d.get('vagas')
+  ) || 0;
 
-        (!q ||
-          p.local
-            .toLowerCase()
-            .includes(q)) &&
+const areaMin =
+  Number(
+    d.get('area_min')
+  ) || 0;
 
-        (!min ||
-          p.valor >= min) &&
 
-        (!max ||
-          p.valor <= max) &&
+const list =
+  all.filter(p =>
 
-        p.quartos >=
-          quartos
-      );
+    /* Negócio */
+    p.negocio ===
+      state.negocio &&
+
+
+    /* Tipo */
+    (!tipo ||
+      p.tipo === tipo) &&
+
+
+    /* Localização */
+    (!q ||
+      p.local
+        .toLowerCase()
+        .includes(q)) &&
+
+
+    /* Valor mínimo */
+    (!min ||
+      p.valor >= min) &&
+
+
+    /* Valor máximo */
+    (!max ||
+      p.valor <= max) &&
+
+
+    /* Quartos */
+    (!quartos ||
+      p.quartos >= quartos) &&
+
+
+    /* Banheiros */
+    (!banheiros ||
+      p.banheiros >= banheiros) &&
+
+
+    /* Vagas */
+    (!vagas ||
+      p.vagas >= vagas) &&
+
+
+    /* Área */
+    (!areaMin ||
+      p.area >= areaMin)
+
+  );
 
     render(list);
   }

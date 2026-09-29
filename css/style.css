@@ -149,6 +149,7 @@ h2{font-size:clamp(2rem,4.4vw,3.4rem)}
 .service h3{font-size:1.6rem;margin-bottom:8px}
 .service p{color:var(--muted);font-size:.96rem}
 
+
 /* Mini List */
 .mini-list {
     display: grid;

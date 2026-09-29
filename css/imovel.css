@@ -78,3 +78,9 @@
 @media (max-width:520px){
   .gallery-main:has(.gallery-video-frame){min-height:0;aspect-ratio:16/9;}
 }
+
+
+.nearby-text {
+  white-space: pre-line;
+  line-height: 1.8;
+}

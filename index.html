@@ -71,24 +71,179 @@
   </div>
 
   <!-- BUSCA -->
+  <!-- BUSCA -->
   <form class="search wrap reveal" id="searchForm" autocomplete="off">
+
     <div class="deal" role="tablist" aria-label="Negócio">
-      <button type="button" class="on" data-deal="venda" role="tab">Comprar</button>
-      <button type="button" data-deal="aluguel" role="tab">Alugar</button>
+
+      <button
+        type="button"
+        class="on"
+        data-deal="venda"
+        role="tab"
+      >
+        Comprar
+      </button>
+
+      <button
+        type="button"
+        data-deal="aluguel"
+        role="tab"
+      >
+        Alugar
+      </button>
+
     </div>
+
     <div class="fields">
-      <label>Tipo de imóvel
-        <select name="tipo"><option value="" data-i18n="search.all">Todos</option><option>Casa</option><option>Apartamento</option><option>Cobertura</option><option>Terreno</option></select></label>
-      <label>Localização
-        <input name="local" list="locais" placeholder="Bairro ou cidade"><datalist id="locais"></datalist></label>
-      <label>Valor mínimo
-        <input name="min" inputmode="numeric" placeholder="R$ 0"></label>
-      <label>Valor máximo
-        <input name="max" inputmode="numeric" placeholder="Sem limite"></label>
-      <label>Quartos
-        <select name="quartos"><option value="0" data-i18n="search.any">Qualquer</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></label>
-      <button type="submit" class="btn btn-gold" data-i18n="search.button">Buscar imóveis</button>
+
+      <!-- TIPO -->
+      <label>
+        Tipo de imóvel
+
+        <select name="tipo">
+
+          <option value="" data-i18n="search.all">
+            Todos
+          </option>
+
+          <option>Casa</option>
+          <option>Apartamento</option>
+          <option>Cobertura</option>
+          <option>Terreno</option>
+          <option>Sobrado</option>
+          <option>Comercial</option>
+          <option>Chácara</option>
+          <option>Fazenda</option>
+          <option>Galpão</option>
+          <option>Loja</option>
+
+        </select>
+      </label>
+
+
+      <!-- LOCALIZAÇÃO -->
+      <label>
+        Localização
+
+        <input
+          name="local"
+          list="locais"
+          placeholder="Bairro ou cidade"
+        >
+
+        <datalist id="locais"></datalist>
+
+      </label>
+
+
+      <!-- VALOR MÍNIMO -->
+      <label>
+        Valor mínimo
+
+        <input
+          name="min"
+          inputmode="numeric"
+          placeholder="R$ 0"
+        >
+
+      </label>
+
+
+      <!-- VALOR MÁXIMO -->
+      <label>
+        Valor máximo
+
+        <input
+          name="max"
+          inputmode="numeric"
+          placeholder="Sem limite"
+        >
+
+      </label>
+
+
+      <!-- QUARTOS -->
+      <label>
+        Quartos
+
+        <select name="quartos">
+
+          <option value="0" data-i18n="search.any">
+            Qualquer
+          </option>
+
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+
+        </select>
+
+      </label>
+
+
+      <!-- BANHEIROS -->
+      <label>
+        Banheiros
+
+        <select name="banheiros">
+
+          <option value="0">
+            Qualquer
+          </option>
+
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+
+        </select>
+
+      </label>
+
+
+      <!-- VAGAS -->
+      <label>
+        Vagas
+
+        <select name="vagas">
+
+          <option value="0">
+            Qualquer
+          </option>
+
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+
+        </select>
+
+      </label>
+
+
+      <!-- ÁREA MÍNIMA -->
+      <input
+        name="area_min"
+        type="text"
+        inputmode="numeric"
+        placeholder="Ex.: 1.000 m²"
+        autocomplete="off"
+      >
+
+
+      <!-- BOTÃO -->
+      <button
+        type="submit"
+        class="btn btn-gold"
+        data-i18n="search.button"
+      >
+        Buscar imóveis
+      </button>
+
     </div>
+
   </form>
 </section>
 
